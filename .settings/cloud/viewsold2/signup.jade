@@ -1,0 +1,68 @@
+extends layout
+
+block content
+  style.
+   .icon{
+   		display:block;
+   		margin:16px 20px;
+   		font-weight:600;
+   	}
+   .form{
+   		display:block;
+   		margin-top:8%;
+   }
+   .form-container{
+   		display:block;
+   		box-sizing: border-box;
+   		width:40%;
+   		max-width:500px;
+   		height:50px;
+   		margin:24px auto;
+   		padding:18px 20px;
+   		border-radius: 5px;
+   }
+   .btn-content{
+   		background:#66afe9;
+   		border-color: #66afe9;
+   		line-height:12px;
+   		color:white !important;
+   		margin:38px auto;
+   }
+   .btn-content-empty{
+   		background:#fff;
+   		border-color: #66afe9;
+   		color:#66afe9 !important;
+   		line-height:12px;
+   }
+   .divider{
+   		text-align:center;
+   		margin-top:5%;
+   }
+   .divider:before,.divider:after{
+   		content: '';
+   		display: inline-block;
+   		vertical-align: middle;
+   		width: 35%;
+   		height: 1px;
+   		background-color: #BABFC3;
+   		margin: 0 0% 0 -50%;
+   }
+   .divider:after{
+   		margin: 0 -50% 0 0%;
+   	}
+   .divider span{
+   		font-size:24px;
+   		padding:8px 40px;
+   }
+  a.icon(href="../index") 
+   i Share&Link
+  div
+   div.divider
+    span 注册
+  form.form
+   input.form-control.form-container(placeholder="邮箱")
+   input.form-control.form-container(placeholder="密码")
+  a(href="../")
+    button.form-container.btn.btn-block.btn-content 注册
+  a(href="../signin")
+   button.form-container.btn.btn-block.btn-content-empty 我是老用户，我要登陆

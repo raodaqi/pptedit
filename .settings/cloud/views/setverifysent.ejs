@@ -1,0 +1,45 @@
+<% include header.ejs %>
+<style type="text/css">
+  .icon{
+      display:block;
+      float:left;
+      margin:16px 20px;
+      font-weight:600;
+    }
+  .send-text{
+    width: 100%;
+    text-align: center;
+    margin: 10% auto;
+    margin-bottom: 0px;
+  }
+  .btn-content{
+      background:#66afe9;
+      border-color: #66afe9;
+      line-height:12px;
+      color:white !important;
+      margin:38px auto;
+  }
+  .form-container{
+      display:block;
+      box-sizing: border-box;
+      width:10%;
+      min-width:150px;
+      height:50px;
+      margin:34px auto;
+      padding:18px 20px;
+      border-radius: 5px;
+  }
+</style>
+<body>
+<nav class="navbar navbar-transparent">
+  <a class="icon" href="./"> <i>share&link</i>
+  </a>
+</nav>
+<div class="send-text">
+  我们向您发送了验证邮件
+</div>
+<a>
+  <button class="form-container btn btn-block btn-content">前往邮箱</button>
+</a>
+<% include footer.ejs %>
+</html>
