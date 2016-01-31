@@ -1,0 +1,198 @@
+extends layout
+
+block content
+  style.
+    .icon{
+      display:block;
+      float:left;
+      margin:16px 20px;
+      font-weight:600;
+    }
+    .navbar{
+    	margin:0;
+    	border-radius:0;
+    }
+    .navbar-bracket{
+      display:  block;
+      float:right;
+      overflow: hidden;
+      margin:26px 20px;
+      padding: 0;
+      list-style: none;
+      vertical-align: middle;
+      white-space: nowrap;
+      font-family: Hiragino Sans GB, Microsoft Yahei !important;
+    }
+    ul li{
+      display:block;
+      float:left;
+      display: inline-block;
+      margin-top: -4px;
+      color: #000;
+      vertical-align: middle;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 600;
+      font-size:18px;
+      padding:0 10px;
+    }
+    .col-lg-3{
+    	text-align:center;
+    	width:25% !important;
+    	float:left;
+    	height:100px;
+    	color:white;
+    	padding:0;
+    	line-height:100px;
+    }
+    .Android{
+    	color:#86CC2A;
+    }
+    .Iphone{
+    	color:#F8CD0B;
+    }
+    .PC{
+    	color:#2AA7CC;
+    }
+    .Other{
+    	color:#17BFAF;
+    }
+    .divider{
+    	text-align:center;
+    	margin-top:5%;
+    }
+    .divider:before,.divider:after{
+    	content: '';
+    	display: inline-block;
+    	vertical-align: middle;
+    	width: 35%;
+    	height: 1px;
+    	background-color: #BABFC3;
+    	margin: 0 0% 0 -50%;
+    }
+    .divider:after{
+    	margin: 0 -50% 0 0%;
+    }
+    .divider span{
+    	font-size:24px;
+    	padding:8px 40px;
+    }
+    .content{
+    	width:100%;
+    	max-width:900px;
+    	margin:0 auto;
+    	text-align:center;
+    }
+    .source .content div{
+    	display:inline-block;
+    	margin:20px;
+    	width:100px;
+    	height:100px;
+    	line-height:100px;
+    	text-align:center;
+    	border-radius:22.7%;
+    	border:1px solid gray;
+    }
+    .content a{
+    	color:inherit !important;
+    }
+    .list-group{
+      text-align:left;
+      padding:5px;
+    }
+    .users{
+      width:50px;
+      height:50px;
+      border:1px solid gray;
+      float:left;
+      margin-right:20px;
+      border-radius:22.7%;
+    }
+    .info{
+      text-align:center;
+    }
+    .info .img{
+      width:120px;
+      height:120px;
+      border:1px solid gray;
+      border-radius:22.7%;
+      margin:100px auto;
+      margin-bottom:50px;
+    }
+    .info-btn{
+      width:200px;
+      height:55px;
+      border:1px solid #D4D8DC;
+      color:#9BA5A7;
+      border-radius:10px;
+      line-height:50px;
+      margin:30px auto;
+    }
+    .info-btn:hover{
+      border:1px solid gray;
+      color:gray;
+    }
+  nav.navbar.navbar-transparent
+    a.icon(href="../")
+      i share&link
+    ul.navbar-bracket
+      a(href="../")
+        li
+          |主页
+      a(href="../market")
+        li
+          |市集
+      //- a(href="../trends")
+      //-   li
+      //-     |动态
+      a.active(href="./users/info")  
+        li
+          |个人中心
+  div.info
+   div.img
+    a(href="#")
+     div
+   div 598471284@qq.com
+   a(href="../users")
+    div.edit.info-btn 修改个人信息
+   a(href="../signin")
+    div.quit.info-btn 退出
+  div.source
+   div.divider
+    span 资源
+   div.content
+    a(href="#")
+     div QQ
+    a(href="#")
+     div 微博
+    a(href="#")
+     div 知乎
+    a(href="#")
+     div 百度
+    a(href="#")
+     div QQ音乐
+    a(href="#")
+     div 酷狗
+    a(href="#")
+     div 滴滴
+    a(href="#")
+     div 百度地图
+  div.trends
+   div.divider
+    span 动态
+   div.content
+    div.list-group
+      a.list-group-item(href="#")
+        div.users
+        h4.list-group-item-heading 招聘UI设计师
+        p.list-group-item-text 急需一名UI，请联系我。
+    div.list-group
+      a.list-group-item(href="#")
+        div.users
+        h4.list-group-item-heading 招聘UI设计师
+        p.list-group-item-text 急需一名UI，请联系我。
+    div.list-group
+      a.list-group-item(href="#")
+        div.users
+        h4.list-group-item-heading 招聘UI设计师
+        p.list-group-item-text 急需一名UI，请联系我。
