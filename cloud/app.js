@@ -59,6 +59,20 @@ app.get('/market', function(req, res) {
   
 });
 
+app.post('/test', function(req, res) {
+	var user = req.AV.user;
+	var data = req.body.data;
+	data = [
+    {
+      "id": 1,
+      "status": 1
+    }
+  ];
+	var userName = user.attributes.username;
+  	var query = new AV.Query("PptData");
+	res.render('index',{user:user});
+});
+
 app.post('/', function(req, res) {
 	var user = req.AV.user;
 	console.log(user);
