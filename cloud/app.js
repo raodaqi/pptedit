@@ -60,17 +60,52 @@ app.get('/market', function(req, res) {
 });
 
 app.post('/test', function(req, res) {
+	// var user = req.AV.user;
+	var pptData = req.body.pptData;
+	var userName = req.body.userName;
+	console.log(pptData);
+	var ppt = AV.Object.extend("PptData");
+  	var ppt = new ppt();
+  	ppt.set('userName', userName);
+	ppt.set('pptData', pptData);
+	ppt.save().then(function(post) {
+	  // 成功保存之后，执行其他逻辑.
+	  res.send(post);
+	}, function(err) {
+	  // 失败之后执行其他逻辑
+	  // error 是 AV.Error 的实例，包含有错误码和描述信息.
+	 res.send(err);
+	});
+});
+
+app.get('/test', function(req, res) {
 	var user = req.AV.user;
-	var data = req.body.data;
-	data = [
-    {
-      "id": 1,
-      "status": 1
-    }
-  ];
-	var userName = user.attributes.username;
-  	var query = new AV.Query("PptData");
-	res.render('index',{user:user});
+	var query = new AV.Query("PptData");
+	query.equalTo("userName","test");
+  	query.find({
+  		success:function(result){
+  			console.log(result[0].attributes.pptData);
+  			var data = eval("("+result[0].attributes.pptData+")");
+  			// data = JSON.stringify(data);
+  			console.log(JSON.stringify(data));
+  			// var result = [{
+  			// 	"code": 200,
+    	// 		"data":data
+  			// }];
+  			console.log(result);
+  			// res.render('test',{result:result[0].attributes.pptData});
+  			res.render('test',{result:data});
+  		},
+  		error:function(error){
+  			var result = [{
+  				"code": 200,
+    			"data":"没有数据"
+  			}];
+  			console.log(result);
+  			res.render('test',{result:result});
+  		}
+  	});
+	
 });
 
 app.post('/', function(req, res) {
