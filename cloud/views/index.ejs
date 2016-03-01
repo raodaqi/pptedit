@@ -144,13 +144,17 @@ div{
       background-color: #4b4f53;
     }
     .buttom-bei{
-      height: 100%;
+      height: 107%;
       width: 100%;
       /*display: none;*/
       float: left;
       background-color: #5F9EA0;
       padding: 10px 10px;
       margin: 10px 10px;
+      box-sizing: border-box;
+      overflow-x:scroll !important;
+      overflow-y:hidden;  
+      display: inline-block;
     }
     .exit{
       margin: 60% 0px;
@@ -279,6 +283,22 @@ div{
        margin-top: -25px;
     }
     .page{}
+    .ppt1{
+      width: 10%;
+      height: 80%;
+      background-color: #104E8B;
+      float: left;
+      margin-top: 12px;
+      margin-left: 12px;
+    }
+    .ppt{
+      height: 80%;
+      width: 90%;
+     /* background-color: black;*/
+      float: left;
+      margin-top: 12px;
+      overflow: auto;
+    }
 }
 </style>
 <body>
@@ -340,19 +360,19 @@ div{
       </button>
   </div>
   <div class="Show">
-  <div class="page" data-type = "1">
-  <div class="mod_1">
-    <div class="mod_1-k1">标题一</div>
-    <div class="mod_1-k2">小标题</div>
-  </div>
-  </div>
-  <div class="page" data-type = "2">
-  <div class="mod_2">
-    <div class="mod_2-title">标题</div>
-    <div class="mod_2-neirong">
-      <div class="mod_2-neirong1">.内容一</div>
+  <div class="page page1" data-type = "1">
+    <div class="mod_1">
+      <div class="mod_1-k1" contenteditable="true" id="title1">标题一</div>
+      <div class="mod_1-k2" contenteditable="true" id="subtitle1">小标题</div>
     </div>
   </div>
+  <div class="page page2" data-type = "2">
+    <div class="mod_2">
+      <div class="mod_2-title"contenteditable="true">标题</div>
+        <div class="mod_2-neirong">
+          <div class="mod_2-neirong1"contenteditable="true">.内容一</div>
+        </div>
+      </div>
   </div>
   <div class="shen">
   <button id="jia" type="button" class="btn btn-default" aria-label="Left Align">
@@ -362,15 +382,22 @@ div{
   </div>
   <div class="buttom">
     <div class="buttom-bei">
+      <div class="ppt">
+      <!-- <div class="bottom-box"> -->
+        <div class="ppt1" id='data1' data-type="1">
+         <!--  <div class="mod_2-title" data-title="zhi1"></div> -->
+        </div>
+      <!-- </div> -->
+      </div>
       <div class="add">
         <button  type="button" class="btn btn-default " aria-label="Left Align"  style="width:100px;height:100px;">
           <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-      </button>
+        </button>
       </div>
     </div>
   </div>
-  </div>
-  </div>
+</div>
+</div>
 <% include footer.ejs %>
 <script type="text/javascript">
 $(document).ready(function(){
@@ -425,17 +452,43 @@ $(document).ready(function(){
   $("#jia").click(function(){
     $(".buttom-bei").toggle();
   });
+  $("#data1").click(function(){
+
+  })
+  var zhi1=document.getElementById('title1').innerHTML;
   });
   function mod1(){
     $(".mod_1").show();
     $(".mod_2").hide();
+    var id = $(".page1").data("id");
+    var page1 = '<div>test</div>';
+    $("#"+id).attr("data-type","1");
+    $("#"+id).append(page1);
   }
   function mod2(){
     $(".mod_2").show();
     $(".mod_1").hide();
   }
-  $.each($(".page"),function(i,o){
-    console.log(i);
+
+  $(".add").on("click",function(){
+    var date = new Date().getTime();
+    console.log(date);
+    var button = '<div class="ppt1" id="'+date+'" data-type="1"><div class="mod_2-title" data-title="zhi1"></div></div>';
+    $(".ppt").append(button);
+  });
+
+  $(".buttom").on("click",".ppt1",function(){
+    // alert(this.id);
+    $(".page").attr("data-id",this.id);
+    var type = $(this).data("type");
+    // $(this).attr("data-type","1");
+    console.log(type);
+    if(type == 1){
+      $(".page").hide();
+      $(".page1").show();
+    }
+
   })
+  
 </script>
 </html>
