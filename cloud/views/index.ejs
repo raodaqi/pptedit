@@ -290,6 +290,7 @@ div{
       float: left;
       margin-top: 12px;
       margin-left: 12px;
+      cursor: pointer;
     }
     .ppt{
       height: 80%;
@@ -384,8 +385,8 @@ div{
     <div class="buttom-bei">
       <div class="ppt">
       <!-- <div class="bottom-box"> -->
-        <div class="ppt1" id='data1' data-type="1">
-         <!--  <div class="mod_2-title" data-title="zhi1"></div> -->
+        <div class="ppt1" id="'+date+'" data-type="1">
+          <div class="mod" data-title="zhi1" data-subtitle="zhi2"></div>
         </div>
       <!-- </div> -->
       </div>
@@ -455,7 +456,7 @@ $(document).ready(function(){
   $("#data1").click(function(){
 
   })
-  var zhi1=document.getElementById('title1').innerHTML;
+  var zhi1=document.getElementById("id").innerHTML;
   });
   function mod1(){
     $(".mod_1").show();
@@ -468,12 +469,16 @@ $(document).ready(function(){
   function mod2(){
     $(".mod_2").show();
     $(".mod_1").hide();
+    var id = $(".page2").data("id");
+    var page2 = '<div>Test</div>';
+    $("#"+id).attr("data-type","2");
+    $("#"+id).append(page2);
   }
 
   $(".add").on("click",function(){
     var date = new Date().getTime();
     console.log(date);
-    var button = '<div class="ppt1" id="'+date+'" data-type="1"><div class="mod_2-title" data-title="zhi1"></div></div>';
+    var button = '<div class="ppt1" id="'+date+'" data-type="1"><div class="mod" data-title="zhi1" data-subtitle="zhi2"></div></div>';
     $(".ppt").append(button);
   });
 
@@ -484,8 +489,12 @@ $(document).ready(function(){
     // $(this).attr("data-type","1");
     console.log(type);
     if(type == 1){
-      $(".page").hide();
+      $(".page2").hide();
       $(".page1").show();
+    }
+    if(type==2){
+      $(".page1").hide();
+      $(".page2").show();
     }
 
   })
