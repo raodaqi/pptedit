@@ -330,12 +330,22 @@ div{
       text-align: center;
       vertical-align: middle;
     }
-    .mod2-title{
+    .ppt1-mod2-title{
+      width: 100%;
+      height: 30%;
+      color: black;
+      font-size: 20px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .ppt1-mod2-neirong{
       width: 100%;
       height: 20%;
-      background-color: black;
+      color: black;
+      font-size: 15px;
+      text-align: center;
+      vertical-align: middle;
     }
-    .mod2-neirong{}
 }
 </style>
 <body>
@@ -429,7 +439,8 @@ div{
           <!-- <div class="mod" data-title="zhi1" data-subtitle="zhi2"></div> -->
           <div class="ppt1-title"></div>
           <div class="ppt1-subtitle"></div>
-         <!--  <div class="mod2-title"></div> -->
+          <div class="mod2-title"></div>
+          <div class="mod2-neirong"></div>
         </div>
       <!-- </div> -->
       </div>
@@ -561,7 +572,7 @@ div{
     var type = $(this).data("type");
     // $(this).attr("data-type","1");
     console.log(type);
-    $(".ppt1").append("");
+    // $(".ppt1").append("");
     if(type == 1){
       $(".page2").hide();
       $(".page1").show();
