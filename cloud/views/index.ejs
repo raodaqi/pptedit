@@ -161,7 +161,7 @@ div{
       float: right;
     }
     .shen{
-      margin: 28px -100px;
+      margin: 62px -100px;
       float: right;
       height: 35px;
       width: 60px;
@@ -177,7 +177,7 @@ div{
       background-color: #4b4f53;
     }
     button:hover{
-      background-color: #58a1e9;
+      background: #58a1e9;
     }
     .formwork_title{
       width: 100%;
@@ -230,50 +230,50 @@ div{
     .mod_2{
       min-height: 550px;
       min-width: 750px;
-      background-color: #585e65;
+      background-color: #104E8B;
       display: none;
       text-align: center;
     }
     .mod_1-k1{
       margin-top: 200px;
       min-height: 100px;
-      min-width: 750px;
-      background-color: #585e65;
+      width: 100%;
+      background-color: #104E8B;
       color: black;
       font-size: 70px;
-      vertical-align: middle;
-    /* position: relative;*/
      text-align: center;
+     vertical-align: middle;
     }
     .mod_1-k2{
       margin-top: 10px;
       min-height: 70px;
-      min-width: 750px;
+      width: 100%;
       /*background-color: black;*/
       color: black;
       font-size: 40px;
       vertical-align: middle;
     /* position: relative;*/
      text-align: center;
+     background-color: #104E8B;
     }
     .mod_2-title{
       min-height: 100px;
-      min-width: 750px;
+      width: 100%;
       text-align: center;
       font-size: 50px;
       color: black;
-      /*background-color: black;*/
+      background-color: #104E8B;
     }
     .mod_2-neirong{
       min-height: 380px;
-      min-width: 750px;
-      /*background-color: black;*/
+      width: 100%;
+      background-color: black;
       overflow-y:scroll;
     }
     .mod_2-neirong1{
       min-width: 750px;
-      min-height: 100px;
-      /*background-color: black;*/
+      width: 100%;
+      background-color: #104E8B;
       font-size: 40px;
       color: black;
       text-align: left;
@@ -282,7 +282,14 @@ div{
     .save{
        margin-top: -25px;
     }
-    .page{}
+    .page page1{
+      min-height: 550px;
+      min-width: 750px;
+    }
+    .page page2{
+      min-height: 550px;
+      min-width: 750px;
+    }
     .ppt1{
       width: 10%;
       height: 80%;
@@ -300,6 +307,35 @@ div{
       margin-top: 12px;
       overflow: auto;
     }
+    .del-ppt{
+
+    }
+    .ppt1-title{
+      height: 25%;
+      width: 100%;
+      color: black;
+      margin-top: 15%;
+      font-size: 10px;
+       /*background-color: black;*/
+      text-align: center;
+      vertical-align: middle;
+    }
+    .ppt1-subtitle{
+      height: 15%;
+      width: 100%;
+      color: black;
+      margin-top: 3%;
+      font-size: 7px;
+      /*background-color: black;*/
+      text-align: center;
+      vertical-align: middle;
+    }
+    .mod2-title{
+      width: 100%;
+      height: 20%;
+      background-color: black;
+    }
+    .mod2-neirong{}
 }
 </style>
 <body>
@@ -363,16 +399,20 @@ div{
   <div class="Show">
   <div class="page page1" data-type = "1">
     <div class="mod_1">
-      <div class="mod_1-k1" contenteditable="true" id="title1">标题一</div>
-      <div class="mod_1-k2" contenteditable="true" id="subtitle1">小标题</div>
+      <!-- <div class="mod_1-k1" contenteditable="true" id="title1">标题一</div> -->
+      <input class="mod_1-k1" id="title1" placeholder="标题一"></input>
+      <!-- <div class="mod_1-k2" contenteditable="true" id="subtitle1">小标题</div> -->
+      <input class="mod_1-k2" id="subtitle1" placeholder="小标题"></input>
     </div>
   </div>
   <div class="page page2" data-type = "2">
     <div class="mod_2">
-      <div class="mod_2-title"contenteditable="true">标题</div>
-        <div class="mod_2-neirong">
-          <div class="mod_2-neirong1"contenteditable="true">.内容一</div>
-        </div>
+      <!-- <div class="mod_2-title"contenteditable="true">标题</div> -->
+      <input class="mod_2-title" id="mod2-title" placeholder="标题"></input>
+        <!-- <div class="mod_2-neirong"> -->
+          <!-- <div class="mod_2-neirong1"contenteditable="true">.内容一</div> -->
+          <input class="mod_2-neirong1" id="mod2-neirong" placeholder=".内容一"></input>
+        <!-- </div> -->
       </div>
   </div>
   <div class="shen">
@@ -385,8 +425,11 @@ div{
     <div class="buttom-bei">
       <div class="ppt">
       <!-- <div class="bottom-box"> -->
-        <div class="ppt1" id="'+date+'" data-type="1">
-          <div class="mod" data-title="zhi1" data-subtitle="zhi2"></div>
+        <div class="ppt1" id="test" data-type="0">
+          <!-- <div class="mod" data-title="zhi1" data-subtitle="zhi2"></div> -->
+          <div class="ppt1-title"></div>
+          <div class="ppt1-subtitle"></div>
+         <!--  <div class="mod2-title"></div> -->
         </div>
       <!-- </div> -->
       </div>
@@ -401,7 +444,7 @@ div{
 </div>
 <% include footer.ejs %>
 <script type="text/javascript">
-$(document).ready(function(){
+  // var nowId = ''; 
   $("#wen").click(function(){
     $(".writing").toggle();
     $(".formwork").hide();
@@ -456,8 +499,34 @@ $(document).ready(function(){
   $("#data1").click(function(){
 
   })
-  var zhi1=document.getElementById("id").innerHTML;
+  $("#title1").on("input change",function(){
+    console.log($("#title1").val());
+    var id = $("body .page1").attr("data-id");
+    console.log(id);
+    $("#"+id+" .ppt1-title").text($("#title1").val());
   });
+
+  $("#subtitle1").on("input change",function(){
+    console.log($("#subtitle1").val());
+    var id = $("body .page1").attr("data-id");
+    console.log(id);
+    $("#"+id+" .ppt1-subtitle").text($("#subtitle1").val());
+  });
+
+  $("#mod2-title").on("input change",function(){
+    console.log($("#mod2-title").val());
+    // var id = $(".page2").data("id");
+    var id = $("body .page2").attr("data-id");
+    $("#"+id+" .ppt1-mod2-title").text($("#mod2-title").val());
+  });
+
+  $("#mod2-neirong").on("input change",function(){
+    console.log($("#mod2-neirong").val());
+    // var id = $(".page2").data("id");
+    var id = $("body .page2").attr("data-id");
+    $("#"+id+" .ppt1-mod2-neirong").text($("#mod2-neirong").val());
+  });
+
   function mod1(){
     $(".mod_1").show();
     $(".mod_2").hide();
@@ -478,16 +547,21 @@ $(document).ready(function(){
   $(".add").on("click",function(){
     var date = new Date().getTime();
     console.log(date);
-    var button = '<div class="ppt1" id="'+date+'" data-type="1"><div class="mod" data-title="zhi1" data-subtitle="zhi2"></div></div>';
+    var button = '<div class="ppt1" id="'+date+'" data-type="0"></div>';
     $(".ppt").append(button);
   });
 
+  // $(".title-name").on("click",function(){
+  //   var id = $("body .page1").attr("data-id");
+  //   console.log(id);
+  // })
   $(".buttom").on("click",".ppt1",function(){
     // alert(this.id);
     $(".page").attr("data-id",this.id);
     var type = $(this).data("type");
     // $(this).attr("data-type","1");
     console.log(type);
+    $(".ppt1").append("");
     if(type == 1){
       $(".page2").hide();
       $(".page1").show();
@@ -496,8 +570,7 @@ $(document).ready(function(){
       $(".page1").hide();
       $(".page2").show();
     }
-
   })
-  
+
 </script>
 </html>
