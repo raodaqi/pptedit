@@ -437,10 +437,14 @@ div{
       <!-- <div class="bottom-box"> -->
         <div class="ppt1" id="test" data-type="0">
           <!-- <div class="mod" data-title="zhi1" data-subtitle="zhi2"></div> -->
+          <div class="ppt1-mod1">
           <div class="ppt1-title"></div>
           <div class="ppt1-subtitle"></div>
-          <div class="mod2-title"></div>
-          <div class="mod2-neirong"></div>
+          </div>
+          <div class="ppt1-mod2">
+          <div class="ppt1-mod2-title"></div>
+          <div class="ppt1-mod2-neirong"></div>
+          </div>
         </div>
       <!-- </div> -->
       </div>
@@ -576,10 +580,14 @@ div{
     if(type == 1){
       $(".page2").hide();
       $(".page1").show();
+      $(".ppt1-mod1").Show();
+      $(".ppt1-mod2").hide();
     }
     if(type==2){
       $(".page1").hide();
       $(".page2").show();
+      $(".ppt1-mod2").Show();
+      $(".ppt1-mod1").hide();
     }
   })
 
