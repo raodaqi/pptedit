@@ -308,7 +308,26 @@ div{
       overflow: auto;
     }
     .del-ppt{
-
+      width: 100%;
+      height: 20%;
+      /*background-color: black;*/
+      font-size: 10px;
+      vertical-align: middle;
+      text-align: right;
+      vertical-align: middle;
+      /*display: none;*/
+      color: black;
+    }
+    .del-ppt button{
+      display: none;
+    }
+    .del-ppt:hover button{
+      display: block;
+    }
+    .ppt-n{
+      width: 100%;
+      height: 80%;
+     /* background-color: #104E8B;*/
     }
     .ppt1-title{
       height: 25%;
@@ -346,6 +365,8 @@ div{
       text-align: center;
       vertical-align: middle;
     }
+    input{border: 0;}
+    button{border: 0;}
 }
 </style>
 <body>
@@ -437,6 +458,7 @@ div{
       <!-- <div class="bottom-box"> -->
         <div class="ppt1" id="test" data-type="0">
           <!-- <div class="mod" data-title="zhi1" data-subtitle="zhi2"></div> -->
+          <div class="ppt-n">
           <div class="ppt1-mod1">
           <div class="ppt1-title"></div>
           <div class="ppt1-subtitle"></div>
@@ -445,6 +467,8 @@ div{
           <div class="ppt1-mod2-title"></div>
           <div class="ppt1-mod2-neirong"></div>
           </div>
+          </div>
+          <div class="del-ppt"><button id="del">删除</button></div>
         </div>
       <!-- </div> -->
       </div>
@@ -562,10 +586,20 @@ div{
   $(".add").on("click",function(){
     var date = new Date().getTime();
     console.log(date);
-    var button = '<div class="ppt1" id="'+date+'" data-type="0"><div class="ppt1-mod1"><div class="ppt1-title"></div><div class="ppt1-subtitle"></div></div><div class="ppt1-mod2"><div class="ppt1-mod2-title"></div><div class="ppt1-mod2-neirong"></div></div></div>';
+    var del = 'date+1';
+    var button = '<div class="ppt1" id="'+date+'" data-type="0"><div class="ppt-n"><div class="ppt1-mod1"><div class="ppt1-title"></div><div class="ppt1-subtitle"></div></div><div class="ppt1-mod2"><div class="ppt1-mod2-title"></div><div class="ppt1-mod2-neirong"></div></div></div><div class="del-ppt"><button id="del">删除</button></div>';
     $(".ppt").append(button);
   });
-
+  $("#del").on("click",function(){
+    var Del=window.confirm("确定要删除该ppt?");
+    if(Del==true)
+    {
+      var id = $(".ppt1").data("id");
+      var test11 = document.getElementById("id");
+                
+      test11.parentNode.removeChild(test11);
+    }
+  })
   // $(".title-name").on("click",function(){
   //   var id = $("body .page1").attr("data-id");
   //   console.log(id);
