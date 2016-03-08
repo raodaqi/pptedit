@@ -263,6 +263,7 @@ div{
       font-size: 50px;
       color: black;
       background-color: #104E8B;
+      text-overflow: ellipsis;
     }
     .mod_2-neirong{
       min-height: 380px;
@@ -277,6 +278,7 @@ div{
       font-size: 40px;
       color: black;
       text-align: left;
+      text-overflow: ellipsis;
     }
     .mod_2-neirong2{}
     .save{
@@ -337,20 +339,24 @@ div{
       width: 100%;
       color: black;
       margin-top: 15%;
-      font-size: 10px;
-       /*background-color: black;*/
+      font-size: 15px;
+      /* background-color: white;*/
       text-align: center;
       vertical-align: middle;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     .ppt1-subtitle{
       height: 15%;
       width: 100%;
       color: black;
       margin-top: 3%;
-      font-size: 7px;
+      font-size: 3px;
       /*background-color: black;*/
       text-align: center;
       vertical-align: middle;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     .ppt1-mod2-title{
       width: 100%;
@@ -359,6 +365,8 @@ div{
       font-size: 20px;
       text-align: center;
       vertical-align: middle;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
     .ppt1-mod2-neirong{
       width: 100%;
@@ -367,8 +375,13 @@ div{
       font-size: 15px;
       text-align: center;
       vertical-align: middle;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
-    input{border: 0;}
+    input{
+      border: 0;
+      text-overflow:ellipsis;
+    }
     button{border: 0;}
     .li-active{
       border: 3px solid white;
@@ -595,7 +608,7 @@ div{
     $(".mod_1").show();
     $(".mod_2").hide();
     var id = $(".page1").data("id");
-    var page1 = '<div>test</div>';
+    var page1 = '<div></div>';
     $("#"+id).attr("data-type","1");
     $("#"+id).append(page1);
   }
@@ -603,7 +616,7 @@ div{
     $(".mod_2").show();
     $(".mod_1").hide();
     var id = $(".page2").data("id");
-    var page2 = '<div>Test</div>';
+    var page2 = '<div></div>';
     $("#"+id).attr("data-type","2");
     $("#"+id).append(page2);
   }
