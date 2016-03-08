@@ -299,6 +299,9 @@ div{
       margin-left: 12px;
       cursor: pointer;
     }
+    .ppt1:hover{
+      border: 3px solid white;
+    }
     .ppt{
       height: 80%;
       width: 90%;
@@ -367,6 +370,9 @@ div{
     }
     input{border: 0;}
     button{border: 0;}
+    .li-active{
+      border: 3px solid white;
+    }
 }
 </style>
 <body>
@@ -456,7 +462,7 @@ div{
     <div class="buttom-bei">
       <div class="ppt">
       <!-- <div class="bottom-box"> -->
-        <div class="ppt1" id="test" data-type="0">
+        <div class="ppt1 li-active" id="test" data-type="0">
           <!-- <div class="mod" data-title="zhi1" data-subtitle="zhi2"></div> -->
           <div class="ppt-n">
           <div class="ppt1-mod1">
@@ -468,7 +474,7 @@ div{
           <div class="ppt1-mod2-neirong"></div>
           </div>
           </div>
-          <div class="del-ppt"><button id="del">删除</button></div>
+          <div class="del-ppt"><button class="del" data-toggle="modal" data-target="#myModal">删除</button></div>
         </div>
       <!-- </div> -->
       </div>
@@ -481,6 +487,25 @@ div{
   </div>
 </div>
 </div>
+
+<div class="modal fade" data-id="" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">提示</h4>
+      </div>
+      <div class="modal-body">
+        要删除该ppt吗?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">是</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">否</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 <% include footer.ejs %>
 <script type="text/javascript">
   // var nowId = ''; 
@@ -586,19 +611,21 @@ div{
   $(".add").on("click",function(){
     var date = new Date().getTime();
     console.log(date);
-    var del = 'date+1';
-    var button = '<div class="ppt1" id="'+date+'" data-type="0"><div class="ppt-n"><div class="ppt1-mod1"><div class="ppt1-title"></div><div class="ppt1-subtitle"></div></div><div class="ppt1-mod2"><div class="ppt1-mod2-title"></div><div class="ppt1-mod2-neirong"></div></div></div><div class="del-ppt"><button id="del">删除</button></div>';
+    var button = '<div class="ppt1" id="'+date+'" data-type="0"><div class="ppt-n"><div class="ppt1-mod1"><div class="ppt1-title"></div><div class="ppt1-subtitle"></div></div><div class="ppt1-mod2"><div class="ppt1-mod2-title"></div><div class="ppt1-mod2-neirong"></div></div></div><div class="del-ppt"><button class="del" data-toggle="modal" data-target="#myModal">删除</button></div>';
     $(".ppt").append(button);
   });
-  $("#del").on("click",function(){
-    var Del=window.confirm("确定要删除该ppt?");
-    if(Del==true)
-    {
-      var id = $(".ppt1").data("id");
-      var test11 = document.getElementById("id");
-                
-      test11.parentNode.removeChild(test11);
-    }
+
+  $("body").on("click",".del",function(){
+    console.log($(this).parent().parent()[0].id);
+     $("body .fade").attr("data-id",$(this).parent().parent()[0].id);
+  })
+
+  $("body").on("click",".btn-default",function(){
+    // var Del=window.confirm("确定要删除该ppt?");
+    // $(".modal").Show();
+     var id = $("body .fade").attr("data-id");
+     console.log(id);
+    $("#"+id).remove();
   })
   // $(".title-name").on("click",function(){
   //   var id = $("body .page1").attr("data-id");
@@ -606,6 +633,8 @@ div{
   // })
   $(".buttom").on("click",".ppt1",function(){
     // alert(this.id);
+    $(".ppt1").removeClass("li-active");
+    $(this).addClass("li-active");
     $(".page").attr("data-id",this.id);
     var type = $(this).data("type");
     // $(this).attr("data-type","1");
