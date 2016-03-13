@@ -1,0 +1,161 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
+    
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Bartek Szopka" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+    <link href="/css/impress-demo.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <style>
+        .autor{
+            float: left;
+            width: 100%;
+            height: 40px;
+            font-size: 52px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .bored-title{
+            margin: 0 auto;
+            margin-top: 200px;
+            text-align: center;
+            font-size: 80px;
+        }
+        .top100{
+            margin-top: 61px;
+        }
+        .path-title{
+            margin: 47px auto;
+            text-align: center;
+            font-size: 60px;
+            height: 75px;
+        }
+        .dev-type{
+            padding-left: 100px;
+            padding-bottom: 100px;
+            font-size: 40px;
+        }
+        .thank{
+            font-size: 200px;
+            text-align: center;
+        }
+        .red{
+            color: red;
+        }
+        #tiny-4 b {
+        display: inline-block;
+        -webkit-transition: 0.5s;
+        -moz-transition:    0.5s;
+        -ms-transition:     0.5s;
+        -o-transition:      0.5s;
+        transition:         0.5s;
+    }
+     #tiny-4.present  .rotating {
+    -webkit-transform: rotate(-10deg);
+    -moz-transform:    rotate(-10deg);
+    -ms-transform:     rotate(-10deg);
+    -o-transform:      rotate(-10deg);
+    transform:         rotate(-10deg);
+
+    -webkit-transition-delay: 0.25s;
+    -moz-transition-delay:    0.25s;
+    -ms-transition-delay:     0.25s;
+    -o-transition-delay:      0.25s;
+    transition-delay:         0.25s;
+
+    }
+    #tiny-4.present .scaling {
+    -webkit-transform: scale(1.4);
+    -moz-transform:    scale(1.4);
+    -ms-transform:     scale(1.4);
+    -o-transform:      scale(1.4);
+    transform:         scale(1.4);
+
+    -webkit-transition-delay: 0.5s;
+    -moz-transition-delay:    0.5s;
+    -ms-transition-delay:     0.5s;
+    -o-transition-delay:      0.5s;
+    transition-delay:         0.5s;
+}
+    </style>
+</head>
+
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+     <div id="title" class="step" data-x="0" data-y="0" data-scale="4">
+        <h1>开题报告</h1>
+        <span class="autor">--by 饶大奇</span>
+    </div>
+  <% for(var i = 0,j=i-1; i < result.length ;i++,j++ ){ %>  
+  <%= result[i].type%>  
+  <%if(result[i].type == 1){%>  
+  <div id="bored" class="step slide" data-x="<%= j*1000%>
+      " data-y="-1500">
+      <div class="bored-title">
+          <%=result[i].data.title%></div>
+      <span class="autor top100">
+          <%=result[i].data.subtitle%></span>
+  </div>
+  <%}else{%>
+  <div class="step slide" data-x="<%= j*1000%> " data-y="-1500"> 
+      <% for(var key in result[i].data){ %> 
+          <div class="path-title red">
+              <%=result[i].data[key]%></div>
+          <div class="dev-type">
+              <span>
+                  <%=result[i].data[key]%></span>
+              <!-- <span>&nbsp;&nbsp;web</span> -->
+          </div>
+          <div class="dev-lan dev-type ">
+              <span>
+                  <%=result[i].data[key]%></span>
+             <!--  <span>&nbsp;&nbsp;javascript &nbsp;&nbsp;CSS3 &nbsp;&nbsp;HTML5</span> -->
+          </div>
+          <div class="dev-tool dev-type ">
+              <span>
+                  <%=result[i].data[key]%></span>
+              <!-- <span>&nbsp;&nbsp;impress.js框架&nbsp;&nbsp; sublime</span> -->
+          </div>     
+          <div class="dev-tool dev-type ">
+              <span>
+                  <%=result[i].data[key]%></span>
+              <!-- <span>&nbsp;&nbsp;impress.js框架&nbsp;&nbsp; sublime</span> -->
+          </div>       
+      <% } %>
+    </div>  
+  <%}%>  
+  <% } %>  
+</div>
+
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>
+
+
