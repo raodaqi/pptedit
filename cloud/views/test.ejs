@@ -97,56 +97,55 @@
   var result = '<%=result.length%>';
   console.log(result);
   // console.log(JSON.parse(result));
-  $("#signin").on("click",function(){
-      // var data = $("input").serialize();
-      var userName = "test";
-      var pptData = [
-    {
-      "type":1,
-      "data":{
-      	"title":"测试",
-      	"subtitle":"122"
-      }
-    },
-    {
-      "type":2,
-      "data":{
-      	"text1":"1",
-      	"text2":"2",
-      	"text3":"3",
-      	"text4":"4",
-      	"text5":"5",
-      }
-    },
-    {
-      "type":2,
-      "data":{
-      	"text1":"",
-      	"text2":"test",
-      	"text3":"哈哈",
-      	"text4":"",
-      	"text5":"嘻嘻",
-      }
-    }
-  ];
-  pptData = JSON.stringify(pptData);
-      var data = {
-      	userName : userName,
-      	pptData     : pptData
-      }
-        $.ajax({
-          type : "POST",
-          data: data,
-          dataType: "json",
-          url : "/test",
-          success : function(result){
-            console.log(result);
-          },
-          error: function(error){
-            alert(error);
-          }
-        });
-
-  })
+  // $("#signin").on("click",function(){
+  //     // var data = $("input").serialize();
+  //     var userName = "test";
+  //     var pptData = [
+  //   {
+  //     "type":1,
+  //     "data":{
+  //     	"title":"测试",
+  //     	"subtitle":"122"
+  //     }
+  //   },
+  //   {
+  //     "type":2,
+  //     "data":{
+  //     	"text1":"1",
+  //     	"text2":"2",
+  //     	"text3":"3",
+  //     	"text4":"4",
+  //     	"text5":"5",
+  //     }
+  //   },
+  //   {
+  //     "type":2,
+  //     "data":{
+  //     	"text1":"",
+  //     	"text2":"test",
+  //     	"text3":"哈哈",
+  //     	"text4":"",
+  //     	"text5":"嘻嘻",
+  //     }
+  //   }
+  // ];
+  // pptData = JSON.stringify(pptData);
+  //     var data = {
+  //     	userName : userName,
+  //     	pptData     : pptData
+  //     }
+  //       $.ajax({
+  //         type : "POST",
+  //         data: data,
+  //         dataType: "json",
+  //         url : "/test",
+  //         success : function(result){
+  //           console.log(result);
+  //         },
+  //         error: function(error){
+  //           alert(error);
+  //         }
+  //       });
+  // })
 </script>
 </html>

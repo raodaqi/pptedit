@@ -146,7 +146,6 @@ div{
     .buttom-bei{
       height: 107%;
       width: 100%;
-      /*display: none;*/
       float: left;
       background-color: #5F9EA0;
       padding: 10px 10px;
@@ -185,7 +184,6 @@ div{
       font-size: 40px;
       margin: 10px auto;  
       position: absolute;
-     /* background-color: #58a1e9;*/
      vertical-align: middle;
      position: relative;
      text-align: center;
@@ -193,7 +191,6 @@ div{
     .formwork_style{
       width: 100%;
       height: 90%;
-     /* background-color: #58a1e9;*/
       float: left;
     }
     .model_1{
@@ -225,7 +222,6 @@ div{
       min-width: 750px;
       background-color: #104E8B;
       text-align: center;
-     /* display: none;*/
     }
     .mod_2{
       min-height: 550px;
@@ -248,11 +244,9 @@ div{
       margin-top: 10px;
       min-height: 70px;
       width: 100%;
-      /*background-color: black;*/
       color: black;
       font-size: 40px;
       vertical-align: middle;
-    /* position: relative;*/
      text-align: center;
      background-color: #104E8B;
     }
@@ -267,20 +261,18 @@ div{
     }
     .mod_2-neirong{
       min-height: 380px;
-      width: 100%;
-      background-color: black;
+      width: 89%;
       overflow-y:scroll;
     }
     .mod_2-neirong1{
-      min-width: 750px;
+      padding:20px 10px;
       width: 100%;
       background-color: #104E8B;
-      font-size: 40px;
+      font-size: 35px;
       color: black;
       text-align: left;
       text-overflow: ellipsis;
     }
-    .mod_2-neirong2{}
     .save{
        margin-top: -25px;
     }
@@ -293,8 +285,8 @@ div{
       min-width: 750px;
     }
     .ppt1{
-      width: 10%;
-      height: 80%;
+      width: 121px;
+      height: 108px;
       background-color: #104E8B;
       float: left;
       margin-top: 12px;
@@ -307,20 +299,17 @@ div{
     .ppt{
       height: 80%;
       width: 90%;
-     /* background-color: black;*/
       float: left;
       margin-top: 12px;
       overflow: auto;
     }
     .del-ppt{
       width: 100%;
-      height: 20%;
-      /*background-color: black;*/
+      height: 20px;
       font-size: 10px;
       vertical-align: middle;
       text-align: right;
       vertical-align: middle;
-      /*display: none;*/
       color: black;
     }
     .del-ppt button{
@@ -332,27 +321,24 @@ div{
     .ppt-n{
       width: 100%;
       height: 80%;
-     /* background-color: #104E8B;*/
     }
     .ppt1-title{
-      height: 25%;
+      height: 25px;
       width: 100%;
       color: black;
       margin-top: 15%;
       font-size: 15px;
-      /* background-color: white;*/
       text-align: center;
       vertical-align: middle;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
     .ppt1-subtitle{
-      height: 15%;
+      height: 20px;
       width: 100%;
       color: black;
       margin-top: 3%;
       font-size: 3px;
-      /*background-color: black;*/
       text-align: center;
       vertical-align: middle;
       text-overflow: ellipsis;
@@ -360,9 +346,9 @@ div{
     }
     .ppt1-mod2-title{
       width: 100%;
-      height: 30%;
+      height: 16px;
       color: black;
-      font-size: 20px;
+      font-size: 10px;
       text-align: center;
       vertical-align: middle;
       text-overflow: ellipsis;
@@ -370,10 +356,10 @@ div{
     }
     .ppt1-mod2-neirong{
       width: 100%;
-      height: 20%;
+      height: 16px;
       color: black;
-      font-size: 15px;
-      text-align: center;
+      font-size: 3px;
+      /*text-align: center;*/
       vertical-align: middle;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -386,131 +372,143 @@ div{
     .li-active{
       border: 3px solid white;
     }
+    .ppt1-mod1{
+      display: none;
+    }
+    .ppt1-mod2{
+      display: none;
+    }
 }
 </style>
 <body>
 <div class="con">
   <div class="title">
-  <div class="title-kong"></div>
-  <div class="title-name">网页版ppt编辑器</div>
-  <div class="save"><button id="signin" type="button" class="btn btn-default btn-corlor" aria-label="Left Align">
-            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-        </button></div>
+    <div class="title-kong"></div>
+    <div class="title-name">网页版ppt编辑器</div>
+    <div class="save">
+      <button id="signin" type="button" class="btn btn-default btn-corlor" aria-label="Left Align">
+        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+      </button>
+    </div>
   </div>
   <div class="menu">
     <div class="function">
-        <button id="wen" type="button" class="btn btn-default btn-corlor" aria-label="Left Align">
-            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>文字
-        </button>
+      <button id="wen" type="button" class="btn btn-default btn-corlor" aria-label="Left Align">
+        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+        文字
+      </button>
       <div class="kong"></div>
       <button id="mu" type="button" class="btn btn-default" aria-label="Left Align">
-          <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>模板
+        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+        模板
       </button>
       <div class="kong"></div>
       <button id="bei" type="button" class="btn btn-default" aria-label="Left Align">
-          <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>背景
+        <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>
+        背景
       </button>
       <div class="kong"></div>
       <button id="don" type="button" class="btn btn-default" aria-label="Left Align">
-          <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>动画
+        <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+        动画
       </button>
-      </div>
+    </div>
   </div>
   <div class="function-choose">
-  <div class="writing">
-    <button id="suo1" type="button" class="btn btn-default exit" aria-label="Left Align">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <div class="writing">
+      <button id="suo1" type="button" class="btn btn-default exit" aria-label="Left Align">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       </button>
-  </div>
-  <div class="formwork">
-  <div class="formwork_title">
-    模板选择
     </div>
-    <div class="formwork_style"> 
-    <div class="formwork_kong1"></div>
-    <div class="model_1"><img src="/img/model1.png" id="img1" onclick="mod1();"></div>
-    <div class="formwork_kong2"></div>
-    <div class="model_2"><img src="/img/model2.png" id="img2" onclick="mod2();"></div>
-    <button id="suo2" type="button" class="btn btn-default exit" aria-label="Left Align">
+    <div class="formwork">
+      <div class="formwork_title">模板选择</div>
+      <div class="formwork_style">
+        <div class="formwork_kong1"></div>
+        <div class="model_1">
+          <img src="/img/model1.png" id="img1" onclick="mod1();"></div>
+        <div class="formwork_kong2"></div>
+        <div class="model_2">
+          <img src="/img/model2.png" id="img2" onclick="mod2();"></div>
+        <button id="suo2" type="button" class="btn btn-default exit" aria-label="Left Align">
           <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      </button>
-      </div>
-  </div>
-  <div class="setting">
-    <button id="suo3" type="button" class="btn btn-default exit" aria-label="Left Align">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      </button>
-  </div>
-  <div class="annimation">
-    <button id="suo4" type="button" class="btn btn-default exit" aria-label="Left Align">
-          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      </button>
-  </div>
-  <div class="Show">
-  <div class="page page1" data-type = "1">
-    <div class="mod_1">
-      <!-- <div class="mod_1-k1" contenteditable="true" id="title1">标题一</div> -->
-      <input class="mod_1-k1" id="title1" placeholder="标题一"></input>
-      <!-- <div class="mod_1-k2" contenteditable="true" id="subtitle1">小标题</div> -->
-      <input class="mod_1-k2" id="subtitle1" placeholder="小标题"></input>
-    </div>
-  </div>
-  <div class="page page2" data-type = "2">
-    <div class="mod_2">
-      <!-- <div class="mod_2-title"contenteditable="true">标题</div> -->
-      <input class="mod_2-title" id="mod2-title" placeholder="标题"></input>
-        <!-- <div class="mod_2-neirong"> -->
-          <!-- <div class="mod_2-neirong1"contenteditable="true">.内容一</div> -->
-          <input class="mod_2-neirong1" id="mod2-neirong" placeholder=".内容一"></input>
-        <!-- </div> -->
-      </div>
-  </div>
-  <div class="shen">
-  <button id="jia" type="button" class="btn btn-default" aria-label="Left Align">
-          <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>suo
-      </button>
-      </div>
-  </div>
-  <div class="buttom">
-    <div class="buttom-bei">
-      <div class="ppt">
-      <!-- <div class="bottom-box"> -->
-        <div class="ppt1 li-active" id="test" data-type="0">
-          <!-- <div class="mod" data-title="zhi1" data-subtitle="zhi2"></div> -->
-          <div class="ppt-n">
-          <div class="ppt1-mod1">
-          <div class="ppt1-title"></div>
-          <div class="ppt1-subtitle"></div>
-          </div>
-          <div class="ppt1-mod2">
-          <div class="ppt1-mod2-title"></div>
-          <div class="ppt1-mod2-neirong"></div>
-          </div>
-          </div>
-          <div class="del-ppt"><button class="del" data-toggle="modal" data-target="#myModal">删除</button></div>
-        </div>
-      <!-- </div> -->
-      </div>
-      <div class="add">
-        <button  type="button" class="btn btn-default " aria-label="Left Align"  style="width:100px;height:100px;">
-          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
         </button>
       </div>
     </div>
+    <div class="setting">
+      <button id="suo3" type="button" class="btn btn-default exit" aria-label="Left Align">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="annimation">
+      <button id="suo4" type="button" class="btn btn-default exit" aria-label="Left Align">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      </button>
+    </div>
+    <div class="Show">
+      <div class="page page1" data-type = "1">
+        <div class="mod_1">
+          <input class="mod_1-k1" id="title1" placeholder="标题一">
+          <input class="mod_1-k2" id="subtitle1" placeholder="小标题"></div>
+      </div>
+      <div class="page page2" data-type = "2">
+        <div class="mod_2">
+          <input class="mod_2-title" id="mod2-title" placeholder="标题">
+          <div class="mod_2-neirong">
+            <input class="mod_2-neirong1" id="mod2-neirong1" placeholder=".内容一">
+            <input class="mod_2-neirong1" id="mod2-neirong2" placeholder=".内容二">
+            <input class="mod_2-neirong1" id="mod2-neirong3" placeholder=".内容三">
+            <input class="mod_2-neirong1" id="mod2-neirong4" placeholder=".内容四"></div>
+        </div>
+      </div>
+      <div class="shen">
+        <button id="jia" type="button" class="btn btn-default" aria-label="Left Align">
+          <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+          suo
+        </button>
+      </div>
+    </div>
+    <div class="buttom">
+      <div class="buttom-bei">
+        <div class="ppt">
+          <div class="ppt1 li-active" id="test" data-type="0">
+            <div class="ppt-n">
+              <div class="ppt1-mod1">
+                <div class="ppt1-title"></div>
+                <div class="ppt1-subtitle"></div>
+              </div>
+              <div class="ppt1-mod2">
+                <div class="ppt1-mod2-title"></div>
+                <div class="ppt1-mod2-neirong" id="ppt1-mod2-neirong1"></div>
+                <div class="ppt1-mod2-neirong" id="ppt1-mod2-neirong2"></div>
+                <div class="ppt1-mod2-neirong" id="ppt1-mod2-neirong3"></div>
+                <div class="ppt1-mod2-neirong" id="ppt1-mod2-neirong4"></div>
+              </div>
+            </div>
+            <div class="del-ppt">
+              <button class="del" data-toggle="modal" data-target="#myModal">删除</button>
+            </div>
+          </div>
+        </div>
+        <div class="add">
+          <button  type="button" class="btn btn-default " aria-label="Left Align"  style="width:100px;height:100px;">
+            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 </div>
 
 <div class="modal fade" data-id="" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
         <h4 class="modal-title" id="myModalLabel">提示</h4>
       </div>
-      <div class="modal-body">
-        要删除该ppt吗?
-      </div>
+      <div class="modal-body">要删除该ppt吗?</div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">是</button>
         <button type="button" class="btn btn-primary" data-dismiss="modal">否</button>
@@ -597,16 +595,35 @@ div{
     $("#"+id+" .ppt1-mod2-title").text($("#mod2-title").val());
   });
 
-  $("#mod2-neirong").on("input change",function(){
-    console.log($("#mod2-neirong").val());
-    // var id = $(".page2").data("id");
+  $("#mod2-neirong1").on("input change",function(){
+    console.log($("#mod2-neirong1").val());
     var id = $("body .page2").attr("data-id");
-    $("#"+id+" .ppt1-mod2-neirong").text($("#mod2-neirong").val());
+    $("#"+id+" #ppt1-mod2-neirong1").text($("#mod2-neirong1").val());
+  });
+
+$("#mod2-neirong2").on("input change",function(){
+    console.log($("#mod2-neirong2").val());
+    var id = $("body .page2").attr("data-id");
+    $("#"+id+" #ppt1-mod2-neirong2").text($("#mod2-neirong2").val());
+  });
+
+$("#mod2-neirong3").on("input change",function(){
+    console.log($("#mod2-neirong3").val());
+    var id = $("body .page2").attr("data-id");
+    $("#"+id+" #ppt1-mod2-neirong3").text($("#mod2-neirong3").val());
+  });
+
+$("#mod2-neirong4").on("input change",function(){
+    console.log($("#mod2-neirong4").val());
+    var id = $("body .page2").attr("data-id");
+    $("#"+id+" #ppt1-mod2-neirong4").text($("#mod2-neirong4").val());
   });
 
   function mod1(){
     $(".mod_1").show();
     $(".mod_2").hide();
+    $(".ppt1-mod1").show();
+    $(".ppt1-mod2").hide();
     var id = $(".page1").data("id");
     var page1 = '<div></div>';
     $("#"+id).attr("data-type","1");
@@ -615,16 +632,19 @@ div{
   function mod2(){
     $(".mod_2").show();
     $(".mod_1").hide();
+    $(".ppt1-mod2").show();
+    $(".ppt1-mod1").hide();
     var id = $(".page2").data("id");
     var page2 = '<div></div>';
+    console.log(id);
     $("#"+id).attr("data-type","2");
-    $("#"+id).append(page2);
+    $("#"+id).append(page2);   
   }
 
   $(".add").on("click",function(){
     var date = new Date().getTime();
     console.log(date);
-    var button = '<div class="ppt1" id="'+date+'" data-type="0"><div class="ppt-n"><div class="ppt1-mod1"><div class="ppt1-title"></div><div class="ppt1-subtitle"></div></div><div class="ppt1-mod2"><div class="ppt1-mod2-title"></div><div class="ppt1-mod2-neirong"></div></div></div><div class="del-ppt"><button class="del" data-toggle="modal" data-target="#myModal">删除</button></div>';
+    var button = '<div class="ppt1" id="'+date+'" data-type="0"><div class="ppt-n"><div class="ppt1-mod1"><div class="ppt1-title"></div><div class="ppt1-subtitle"></div></div><div class="ppt1-mod2"><div class="ppt1-mod2-title"></div><div class="ppt1-mod2-neirong"></div><div class="ppt1-mod2-neirong"></div><div class="ppt1-mod2-neirong"></div><div class="ppt1-mod2-neirong"></div></div></div><div class="del-ppt"><button class="del" data-toggle="modal" data-target="#myModal">删除</button></div>';
     $(".ppt").append(button);
   });
 
@@ -634,38 +654,73 @@ div{
   })
 
   $("body").on("click",".btn-default",function(){
-    // var Del=window.confirm("确定要删除该ppt?");
-    // $(".modal").Show();
      var id = $("body .fade").attr("data-id");
      console.log(id);
     $("#"+id).remove();
   })
-  // $(".title-name").on("click",function(){
-  //   var id = $("body .page1").attr("data-id");
-  //   console.log(id);
-  // })
   $(".buttom").on("click",".ppt1",function(){
-    // alert(this.id);
     $(".ppt1").removeClass("li-active");
     $(this).addClass("li-active");
     $(".page").attr("data-id",this.id);
-    var type = $(this).data("type");
-    // $(this).attr("data-type","1");
+    var type = $(this).attr("data-type");
     console.log(type);
-    // $(".ppt1").append("");
     if(type == 1){
       $(".page2").hide();
-      $(".page1").show();
-      $(".ppt1-mod1").Show();
-      $(".ppt1-mod2").hide();
+      $(".page1").show();      
     }
     if(type==2){
       $(".page1").hide();
-      $(".page2").show();
-      $(".ppt1-mod2").Show();
-      $(".ppt1-mod1").hide();
+      $(".page2").show();      
     }
   })
+  $("#signin").on("click",function(){
+    var userName = "test";
+    var pptData = [];
+    var ppt = {};
+    $(".ppt1").each(function(i){
+      var type = $(this).attr("data-type");
+      console.log($(this).attr("data-type"));
+      if(type == 1){
+        ppt = {
+          type  : type,
+          data  : {
+          title : $(this).find(".ppt1-title").text(),
+          subtitle : $(this).find(".ppt1-subtitle").text()
+              }
+        }
+      }
+      if(type ==2){
+         ppt = {
+          type  : type,
+          data  : {
+          title : $(this).find(".ppt1-mod2-title").text(),
+          text2 : $(this).find("#ppt1-mod2-neirong1").text(),
+          text3 : $(this).find("#ppt1-mod2-neirong2").text(),
+          text4 : $(this).find("#ppt1-mod2-neirong3").text(),
+          text5 : $(this).find("#ppt1-mod2-neirong4").text()
+          }
+        }
+      }
+      pptData[i] = ppt;
+    })
+    console.log(pptData);
+    pptData = JSON.stringify(pptData);
+      var data = {
+        userName : userName,
+        pptData     : pptData
+      }
+        $.ajax({
+          type : "POST",
+          data: data,
+          dataType: "json",
+          url : "/test",
+          success : function(result){
+            console.log(result);
+          },
+          error: function(error){
+            alert(error);
+          }
+        });
+  })
 
-</script>
-</html>
+</script></html>

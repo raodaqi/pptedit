@@ -35,6 +35,36 @@ app.get('/', function(req, res) {
   res.render('index',{user:user});
 });
 
+app.get('/model', function(req, res) { 	
+  // res.render('model');
+
+var user = req.AV.user;
+	var query = new AV.Query("PptData");
+	query.equalTo("userName","test");
+  	query.find({
+  		success:function(result){
+  			console.log(result[0].attributes.pptData);
+  			var data = eval("("+result[0].attributes.pptData+")");
+  			// data = JSON.stringify(data);
+  			console.log(JSON.stringify(data));
+  			// var result = [{
+  			// 	"code": 200,
+    	// 		"data":data
+  			// }];
+  			console.log(result);
+  			// res.render('test',{result:result[0].attributes.pptData});
+  			res.render('model',{result:data});
+  		},
+  		error:function(error){
+  			var result = [{
+  				"code": 200,
+    			"data":"没有数据"
+  			}];
+  			console.log(result);
+  			res.render('model',{result:result});
+  		}
+  	});});
+
 app.get('/index', function(req, res) {
   res.redirect('/');
 });
